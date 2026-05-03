@@ -1,0 +1,14 @@
+[Unit]
+Description=Skener Sluzba
+After=network.target
+
+[Service]
+ExecStart=/home/appuser/python/venv/bin/python /home/appuser/python/skener_sluzba.py
+WorkingDirectory=/home/appuser/python
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=appuser
+
+[Install]
+WantedBy=multi-user.target

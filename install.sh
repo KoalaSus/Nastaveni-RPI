@@ -9,7 +9,7 @@ sudo apt install -y python3 python3-venv python3-pip i2c-tools ufw libcamera-dev
 
 sudo mkdir -p /home/appuser/python
 sudo mkdir -p /home/appuser/python/images
-sudo mkdir -p /home/appuser/scans
+sudo mkdir -p /home/appuser/python/static/scans
 sudo chown -R appuser:appuser /home/appuser/python
 sudo chown -R appuser:appuser /home/appuser/scans
 

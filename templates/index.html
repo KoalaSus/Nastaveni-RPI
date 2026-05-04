@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoalaSUS - Ovládání skeneru</title>
+    <link rel="icon" href="{{ url_for('static', filename='koalaIconRound.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Ovládání</a>
+        <a href="/skeny">Skeny</a>
+    </nav>
+
+    <main class="card">
+        <h1>3D Skener</h1>
+        
+        <div id="stateBox">
+            <!-- Dynamicky plněno pomocí koalasus.js -->
+            <div>Načítám stav ze serveru...</div>
+        </div>
+
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+        <div id="progressText">0%</div>
+
+        <div class="buttons">
+            <button id="btnStart" onclick="sendCmd('start')">Start</button>
+            <button id="btnStop" onclick="sendCmd('stop')" disabled>Stop</button>
+            <button id="btnKill" class="danger" onclick="sendCmd('kill')" disabled>Kill</button>
+        </div>
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/koalasus.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoalaSUS - Skeny</title>
+    <link rel="icon" href="{{ url_for('static', filename='koalaIconRound.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+    <script type="module" src="{{ url_for('static', filename='js/viewer.js') }}"></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Ovládání</a>
+        <a href="/skeny">Skeny</a>
+    </nav>
+    
+    <div class="layout">
+        <aside class="soubory">
+            <h2>Soubory</h2>
+            <ul id="fileList">
+                {% for file in files %}
+                    {% if file not in ["nenalezeno", "chyba při načítání"] %}
+                        <li class="file-item" data-file="{{ file }}">{{ file }}</li>
+                    {% else %}
+                        <li>{{ file }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </aside>
+        
+        <section class="viewer-container">
+            <div class="card viewer-card">
+                <canvas id="viewer"></canvas>
+                <button id="downloadBtn" class="primary-btn" disabled>Stáhnout model</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

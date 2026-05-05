@@ -20,7 +20,7 @@ python3 -m venv /home/appuser/python/venv
 source /home/appuser/python/venv/bin/activate
 
 pip install --upgrade pip
-pip install flask waitress requests rpi-lcd flask-cors opencv-python-headless trimesh numpy
+pip install flask waitress requests rpi-lcd flask-cors
 
 deactivate
 

@@ -11,7 +11,7 @@ states = ["neskenuje","skenuje","pozastaveno","hotovo","chyba"]
 class State:
     def __init__(self):
         self.state = states[0]
-        self.dir = "/home/appuser/scans"
+        self.dir = "static/scans"
         self.pos = 0
         self.end = 100
 

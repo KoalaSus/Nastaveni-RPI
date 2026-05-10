@@ -11,7 +11,6 @@ sudo mkdir -p /home/appuser/python
 sudo mkdir -p /home/appuser/python/images
 sudo mkdir -p /home/appuser/python/static/scans
 sudo chown -R appuser:appuser /home/appuser/python
-sudo chown -R appuser:appuser /home/appuser/static/scans
 
 cp skener_sluzba.py skener_ovladani.py skener_web.py /home/appuser/python/
 cp -r templates static /home/appuser/python/

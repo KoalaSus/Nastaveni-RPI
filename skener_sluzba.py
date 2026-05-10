@@ -100,14 +100,6 @@ def get_state():
         }
     })
 
-@app_state.route('/sken/<filename>')
-def serve_scan_file(filename):
-    print(f"Pokus o načtení: {data.dir} / {filename}")
-    return send_from_directory(data.dir, filename)
-
-def run_state():
-    serve(app_state, host="0.0.0.0", port=5001)
-
 # ---
 
 def lcd_worker():
